@@ -43,8 +43,8 @@
               "file-saver",
               "xlsx",
               "jspdf-autotable"
-            ],
-	    "baseHref": "/NonTrading/"
+            ]
+	    
           },
           "configurations": {
             "production": {
