@@ -3,10 +3,6 @@ FROM node:12 AS build
 WORKDIR /app
 
 COPY . .
-
-RUN npm install -g @angular/cli@11 
-
-RUN npm run build 
  
 FROM nginx:latest
 
