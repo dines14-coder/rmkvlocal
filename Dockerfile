@@ -4,16 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-COPY package* ./
-
-RUN rm -rf dist*
-
-RUN rm -rf node-mod*
-
-RUN npm clean cache --force
-
-RUN npm install --force 
-
 RUN npm install -g @angular/cli@11 
 
 RUN npm run build 
