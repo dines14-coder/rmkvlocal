@@ -1,0 +1,6 @@
+{
+    "apiUrl": "http://192.9.206.50:7010/",
+    "launcherUiUrl": "http://192.9.206.50:8001/rmkv.nxt/redirect?",
+    "nonTradingUiUrl": "http://192.9.206.50:8014/NonTrading/redirect?",
+    "baseUrl": "/NonTrading/"
+}

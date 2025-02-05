@@ -1,0 +1,7 @@
+{
+   "apiUrl": "https://localhost:44314/",
+    "launcherUiUrl": "http://192.9.206.50:2001/rmkv.nxt/redirect?",
+    "nonTradingUiUrl": "http://localhost:5300/redirect?",
+    "baseUrl": "/"
+}
+
