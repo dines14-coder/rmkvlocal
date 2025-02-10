@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+	
+	<ItemGroup>
+		<PackageReference Include="FastReport.Compat" Version="2020.3.8" />
+		<PackageReference Include="FastReport.OpenSource" Version="2020.4.3" />
+		<PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2020.4.3" />
+		<PackageReference Include="FastReport.OpenSource.Web" Version="2020.4.3" />
+		<PackageReference Include="Nancy" Version="2.0.0" />
+		<PackageReference Include="Npgsql" Version="4.1.4" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+		<PackageReference Include="Z.Dapper.Plus" Version="3.0.5" />
+		<PackageReference Include="Dapper" Version="2.0.30" />
+		<PackageReference Include="Dapper.SqlBuilder" Version="2.0.30" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Demo.DataModel\Demo.DataModel.csproj" />
+	</ItemGroup>
+</Project>
