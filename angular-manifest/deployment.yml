@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: angularapp
-        image: dvrdinesh/rmkvdemo:replaceImageTag
+        image: dvrdinesh/rmkvdemo:4
         ports:
         - containerPort: 80
       imagePullSecrets:
