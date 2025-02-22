@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: angularapp
-        image: dinesh14coder/angular-app:33
+        image: dinesh14coder/angular-app:replaceImageTag
         ports:
         - containerPort: 80
       imagePullSecrets:
