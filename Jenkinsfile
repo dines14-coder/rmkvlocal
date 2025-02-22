@@ -38,8 +38,8 @@ pipeline {
                     git config user.email "dvrdineshdvrdinesh728@gmail.com"
                     git config user.name "dines14-coder"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" rmkvlocal/angular-manifest/deployment.yml
-                    git add rmkvlocal/angular-manifest/deployment.yml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" angular-manifest/deployment.yml
+                    git add angular-manifest/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
