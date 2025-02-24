@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url:'https://github.com/dines14-coder/rmkvlocal.git'
+                // git branch: 'main', url:'https://github.com/dines14-coder/rmkvlocal.git'
                 sh "ls -ltr"
             }
         }
         stage('Build Image and Push') {
             environment {
-                DOCKER_IMAGE = "dvrdinesh/rmkvdemo:angular"
+                DOCKER_IMAGE = "dvrdinesh/rmkvdemo:angular${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials("hub-cred")
             }
             steps {
@@ -37,7 +37,7 @@ pipeline {
                 sh '''
                     git config user.email "dvrdineshdvrdinesh728@gmail.com"
                     git config user.name "dines14-coder"
-                    REPLACE="rmkvdemo:${BUILD_NUMBER}"
+                    REPLACE="rmkvdemo:angular${BUILD_NUMBER}"
                     sed -i "s/rmkvdemo*/${REPLACE}/g" angular-manifest/deployment.yml
                     git add angular-manifest/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
