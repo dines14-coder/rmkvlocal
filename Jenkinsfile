@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image and Push') {
             environment {
                 DOCKER_IMAGE = "dinesh14coder/angular-app:angular${BUILD_NUMBER}"
-                REGISTRY_CREDENTIALS = credentials("hub-cred")
+                REGISTRY_CREDENTIALS = credentials("dock-cred")
             }
             steps {
                 script {
@@ -20,7 +20,7 @@ pipeline {
                         sh 'whoami'
                         sh 'docker build -t ${DOCKER_IMAGE} .'
                         def dockerImage = docker.image("${DOCKER_IMAGE}")
-                        withDockerRegistry([credentialsId: 'hub-cred', url: 'https://index.docker.io/v1/']) { 
+                        withDockerRegistry([credentialsId: 'dock-cred', url: 'https://index.docker.io/v1/']) { 
                             dockerImage.push()
                         }
                     }
