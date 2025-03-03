@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build Image and Push') {
             environment {
-                DOCKER_IMAGE = "dvrdinesh/rmkvdemo:angular${BUILD_NUMBER}"
+                DOCKER_IMAGE = "dinesh14coder/angular-app:angular${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials("hub-cred")
             }
             steps {
@@ -20,7 +20,7 @@ pipeline {
                         sh 'whoami'
                         sh 'docker build -t ${DOCKER_IMAGE} .'
                         def dockerImage = docker.image("${DOCKER_IMAGE}")
-                        docker.withRegistry('https://index.docker.io/v1', 'hub-cred') {
+                        withDockerRegistry([credentialsId: 'hub-cred', url: 'https://index.docker.io/v1/']) { 
                             dockerImage.push()
                         }
                     }
@@ -37,8 +37,8 @@ pipeline {
                 sh '''
                     git config user.email "dvrdineshdvrdinesh728@gmail.com"
                     git config user.name "dines14-coder"
-                    REPLACE="rmkvdemo:angular${BUILD_NUMBER}"
-                    sed -i "s/rmkvdemo*/${REPLACE}/g" angular-manifest/deployment.yml
+                    REPLACE="angular-app:angular${BUILD_NUMBER}"
+                    sed -i "s/angular-app*/${REPLACE}/g" angular-manifest/deployment.yml
                     git add angular-manifest/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
