@@ -38,7 +38,7 @@ pipeline {
                     git config user.email "dvrdineshdvrdinesh728@gmail.com"
                     git config user.name "dines14-coder"
                     REPLACE="angular-app:angular${BUILD_NUMBER}"
-                    sed -i "s/angular-app:*/${REPLACE}/g" angular-manifest/deployment.yml
+                    sed -i -E "s/angular-app:.*/${REPLACE}/g" angular-manifest/deployment.yml
                     git add angular-manifest/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
