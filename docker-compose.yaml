@@ -5,3 +5,4 @@ services:
     container_name: angular-app
     ports:
       - "89:80"
+    restart: always
