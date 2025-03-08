@@ -1,6 +1,6 @@
 services:
   rmkv-app:
-    image: dinesh14coder/angular-app:angular5
+    image: dinesh14coder/angular-app:
     container_name: angular-app
     ports:
       - "89:80"
