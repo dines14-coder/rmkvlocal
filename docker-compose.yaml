@@ -1,4 +1,3 @@
-version: '1'
 services:
   rmkv-app:
     image: dinesh14coder/angular-app:angular5
